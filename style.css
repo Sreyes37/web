@@ -1,0 +1,479 @@
+/* Paleta de colores del logo */
+:root {
+    --color-principal-morado: #4A0D66;
+    --color-acento-verde: #CCFF00;
+    --color-texto-claro: #FFFFFF;
+    --color-texto-oscuro: #333333;
+    --color-fondo-seccion: #f4f4f4; /* Un gris muy claro para el fondo general */
+    --color-fondo-seccion-alternativo: #FFFFFF; /* Blanco para secciones alternas */
+    --color-borde-suave: #e0e0e0;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Fuente más moderna */
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo-seccion);
+    color: var(--color-texto-oscuro);
+    line-height: 1.7; /* Un poco más de espacio entre líneas */
+    font-size: 16px; /* Tamaño base de fuente */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px; 
+    margin: auto;
+    overflow: visible; /* Cambiado para posibles sombras o elementos que se salgan un poco */
+    padding: 0 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--color-principal-morado);
+    color: var(--color-texto-claro);
+    padding: 1rem 0; 
+    border-bottom: 5px solid var(--color-acento-verde);
+    position: sticky; 
+    top: 0;
+    z-index: 1000; 
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; 
+}
+
+#logo {
+    height: 120px; 
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center; 
+}
+
+header nav ul li {
+    margin-left: 25px; 
+}
+
+header nav ul li a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem; 
+    padding: 5px 0; /* Padding para mejorar el área clickeable */
+    border-bottom: 2px solid transparent; /* Para efecto hover */
+    transition: color 0.2s ease, border-bottom-color 0.2s ease; /* Transición suave */
+}
+
+header nav ul li a:hover, header nav ul li a.active { /* Estilo para link activo/hover */
+    color: var(--color-acento-verde);
+    border-bottom-color: var(--color-acento-verde);
+}
+
+/* Header Social Icons */
+.header-social-icons {
+    display: flex;
+    align-items: center; /* Alinea los iconos verticalmente con la navegación */
+}
+
+.header-social-icons a {
+    color: var(--color-texto-claro); /* Color blanco para los iconos SVG */
+    text-decoration: none;
+    margin-left: 18px; /* Espacio a la izquierda de cada icono social */
+    transition: color 0.2s ease, transform 0.2s ease; /* Añadimos transform para un pequeño efecto */
+    display: inline-block; /* Para que transform funcione correctamente */
+}
+
+.header-social-icons a svg {
+    width: 24px;  /* Ajusta el tamaño según tus preferencias */
+    height: 24px; /* Ajusta el tamaño según tus preferencias */
+    display: block; /* Evita espacio extra debajo del SVG */
+}
+
+.header-social-icons a:hover {
+    color: var(--color-acento-verde); /* Color de acento al pasar el ratón */
+    transform: scale(1.1); /* Ligero zoom al pasar el ratón */
+}
+
+
+/* Estilos para la sección de transmisión en vivo */
+#live-broadcast {
+    background-color: #2d0b3f; 
+    padding: 30px 0; /* Más padding */
+    color: var(--color-texto-claro); /* Texto claro para esta sección oscura */
+}
+
+.live-broadcast-container { 
+    max-width: 1200px; 
+    margin: 0 auto;    
+    padding: 0 15px;   
+}
+
+.streaming-player-wrapper {
+    background-color: #000000; 
+    border: 3px solid var(--color-acento-verde); 
+    border-radius: 8px;
+    padding: 20px; /* Más padding interno */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.5); /* Sombra más pronunciada */
+}
+
+.live-indicator {
+    margin-bottom: 15px; /* Más espacio */
+    text-align: center; /* Centrar el EN VIVO si es el único elemento */
+}
+
+.live-indicator span {
+    background-color: #e50914; 
+    color: var(--color-texto-claro);
+    padding: 10px 20px; /* Más padding */
+    font-weight: bold;
+    border-radius: 5px;
+    font-size: 1.25rem; /* Más grande */
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.player-placeholder {
+    background-color: #000;
+    overflow: hidden;
+    position: relative; 
+    margin-bottom: 15px; /* Espacio antes del stream de audio */
+}
+
+.player-placeholder iframe {
+    display: block;
+    width: 100%;
+    height: 450px; 
+    max-width: 100%;
+    border: none;
+}
+
+.audio-stream-placeholder {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.1); /* Un fondo sutil si es necesario */
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+
+.audio-stream-placeholder h4{
+    margin-top:0;
+    color: var(--color-acento-verde);
+    margin-bottom: 10px; /* Espacio debajo del título "Escucha solo el audio" */
+}
+
+.audio-stream-placeholder audio {
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 4px; 
+}
+
+.audio-stream-placeholder p { /* Estilo para el mensaje de ayuda del reproductor de audio */
+    font-size: 0.85em;
+    margin-top: 8px;
+    color: #ddd; /* Color más claro para texto de ayuda en fondo oscuro */
+}
+
+
+.live-info-bar {
+    background-color: rgba(0, 0, 0, 0.6); /* Más oscuro y menos transparente */
+    color: var(--color-texto-claro);
+    padding: 12px 18px; /* Más padding */
+    margin-top: 15px; 
+    border-radius: 5px; 
+    text-align: center;
+    font-size: 1.05rem; /* Un poco más grande */
+}
+.live-info-bar p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+/* Secciones Generales */
+section {
+    padding: 50px 0; /* Aumentar padding general de secciones */
+}
+#programas, #programacion-semanal, #sobre-nosotros, #contacto {
+     padding: 60px 0; /* Padding específico para estas secciones */
+     border-bottom: 1px solid var(--color-borde-suave); /* Línea divisoria sutil */
+}
+#programas { background-color: var(--color-fondo-seccion-alternativo); }
+#programacion-semanal { background-color: var(--color-fondo-seccion); }
+#sobre-nosotros { background-color: var(--color-fondo-seccion-alternativo); }
+#contacto { background-color: var(--color-fondo-seccion); }
+
+
+section:last-of-type {
+    border-bottom: none; /* Quitar borde de la última sección */
+}
+
+section h2 { 
+    text-align: center;
+    margin-bottom: 40px; /* Más espacio debajo del título */
+    color: var(--color-principal-morado);
+    font-size: 2.8rem; /* Título más grande */
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Pequeño espaciado de letras */
+    font-weight: 700; /* Más peso */
+}
+
+/* Sección Programas */
+.programas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Tarjetas un poco más anchas */
+    gap: 30px; /* Más espacio entre tarjetas */
+}
+
+.programa-card {
+    background-color: var(--color-fondo-seccion-alternativo);
+    border: 1px solid var(--color-borde-suave);
+    border-radius: 8px;
+    text-align: left; /* Alinear texto a la izquierda dentro de la tarjeta */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Sombra más suave y difusa */
+    overflow: hidden; 
+    display: flex; /* Para controlar mejor el contenido interno */
+    flex-direction: column;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.programa-card:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.programa-card .video-container {
+    position: relative;
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    width: 100%;
+    background-color: #000;
+    border-top-left-radius: 8px; /* Redondear esquinas con el video */
+    border-top-right-radius: 8px;
+}
+
+.programa-card .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+.programa-card.video-card {
+    padding: 0; 
+}
+.programa-info {
+    padding: 20px; /* Padding para la info del programa */
+    flex-grow: 1; /* Para que ocupe el espacio restante si las tarjetas tienen alturas variables */
+}
+.programa-info h3 {
+    color: var(--color-principal-morado);
+    margin-top: 0; 
+    margin-bottom: 10px;
+    font-size: 1.5rem; /* Título de programa más grande */
+}
+.programa-info p {
+    font-size: 0.95rem; /* Texto de descripción un poco más grande */
+    color: #555; /* Color de texto más suave para descripción */
+    line-height: 1.6;
+}
+
+
+/* Sección Programación Semanal */
+#programacion-semanal .programacion-tabla {
+    background-color: var(--color-fondo-seccion-alternativo);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: left;
+}
+#programacion-semanal .programacion-tabla h4 {
+    color: var(--color-principal-morado);
+    font-size: 1.4rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--color-acento-verde);
+    padding-bottom: 5px;
+    display: inline-block;
+}
+#programacion-semanal .programacion-tabla h4:first-of-type {
+    margin-top: 0;
+}
+#programacion-semanal .programacion-tabla ul {
+    list-style: none;
+    padding-left: 0;
+}
+#programacion-semanal .programacion-tabla ul li {
+    padding: 8px 0;
+    border-bottom: 1px dotted var(--color-borde-suave);
+}
+#programacion-semanal .programacion-tabla ul li:last-child {
+    border-bottom: none;
+}
+#programacion-semanal .programacion-tabla ul li strong {
+    color: var(--color-texto-oscuro);
+    margin-right: 10px;
+}
+.nota-programacion {
+    font-style: italic;
+    color: #777;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+
+/* Sección Sobre Nosotros */
+#sobre-nosotros .container {
+    text-align: center; /* Centrar contenido de esta sección */
+}
+.sobre-nosotros-logo {
+    max-width: 150px; /* Tamaño del logo en esta sección */
+    margin-bottom: 20px;
+    border-radius: 50%; /* Hacer el logo circular si es apropiado */
+    border: 3px solid var(--color-acento-verde);
+}
+#sobre-nosotros p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    max-width: 800px; /* Ancho máximo para el texto para mejor legibilidad */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+/* Sección Contacto */
+.datos-contacto {
+    margin-bottom: 30px;
+    text-align: center; /* Centrar datos de contacto */
+}
+.datos-contacto p {
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+.datos-contacto a {
+    color: var(--color-principal-morado);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.datos-contacto a:hover {
+    color: var(--color-acento-verde);
+    text-decoration: underline;
+}
+
+/* Estilos para el contenedor del iframe del formulario de Google */
+.contact-form-wrapper {
+    text-align: center; 
+    margin-top: 30px; 
+}
+
+.contact-form-wrapper h3 {
+    /* El estilo inline en el HTML tiene color: var(--color-principal-morado); margin-bottom: 25px; */
+    /* Podemos ajustar el tamaño de fuente aquí si es necesario */
+    font-size: 1.5rem; 
+}
+
+.contact-form-wrapper iframe {
+    /* Los estilos principales (width, max-width, height, border, display, margin) 
+       ya están inline en el HTML para mayor especificidad. */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Opcional: añadir una sombra al iframe */
+    border-radius: 8px; /* Opcional: redondear esquinas del iframe */
+}
+
+
+/* Footer */
+footer {
+    background-color: var(--color-principal-morado);
+    color: var(--color-texto-claro);
+    text-align: center;
+    padding: 30px 0; 
+    margin-top: 30px;
+    border-top: 5px solid var(--color-acento-verde);
+}
+footer p {
+    margin: 8px 0; 
+    font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    #logo {
+        margin-bottom: 15px;
+        height: 100px; 
+    }
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10px; 
+    }
+     header nav ul li {
+        margin: 10px 0;
+        margin-left: 0; 
+    }
+     header nav ul li a {
+        font-size: 1rem; 
+    }
+
+    .header-social-icons {
+        margin-top: 15px; 
+        justify-content: center; 
+    }
+    .header-social-icons a {
+        margin-left: 10px; 
+        margin-right: 10px; 
+    }
+    
+    .live-broadcast-container { padding: 0 10px; }
+    .player-placeholder iframe { height: 300px; }
+    section h2 { font-size: 2.2rem; } 
+    .programas-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 880px) and (min-width: 769px) { 
+    header nav ul li {
+        margin-left: 15px; 
+    }
+    header nav ul li a {
+        font-size: 1rem;
+    }
+    .header-social-icons a {
+        margin-left: 12px; 
+    }
+    .header-social-icons a svg {
+        width: 20px;
+        height: 20px;
+    }
+    #logo {
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    body { font-size: 15px; } 
+    #logo { height: 80px; }
+    header nav ul li a { font-size: 0.95rem; }
+
+    .header-social-icons a svg {
+        width: 22px; 
+        height: 22px;
+    }
+
+    .player-placeholder iframe { height: 220px; }
+    .live-indicator span { font-size: 1rem; padding: 8px 12px; }
+    .live-info-bar { font-size: 0.9rem; }
+    section h2 { font-size: 1.8rem; }
+    .programa-info h3 { font-size: 1.3rem; }
+}
